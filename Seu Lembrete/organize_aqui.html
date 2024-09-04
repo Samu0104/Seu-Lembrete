@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Lembrete</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="_8cbcce4c-88c2-44b8-b867-5d20ad9ad63d.jpg" width=80px height=80px>
+            <h1>Seu Lembrete</h1>
+            <nav>
+                <ul>
+                    <li class="estilo"><a href="cadastrar.html">Cadastrar</a></li>
+                    <li class="estilo"><a href="entrar.html">Entrar</a></li>
+                    <li class="estilo"><a href="tela_inicial.html">Rotina</a></li>
+                    <li class="estilo"><a href="como_organizar.html">Como Organizar</a></li>
+                    <li class="estilo"><a href="sobre_nos.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="formulario">
+        <div class="container">
+            <h2>Organize Sua Rotina</h2>
+            <form id="routine-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="task">Tarefa:</label>
+                <input type="text" id="task" name="task" required>
+                
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Hora:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+            <div id="message"></div>
+        </div>
+    </section>
+    <script>
+
+        // Função para processar o formulário de rotina
+        document.getElementById('routine-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtendo valores do formulário
+            const name = document.getElementById('name').value;
+            const task = document.getElementById('task').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            // Simulação de adição de tarefa (aqui você poderia adicionar código para salvar em um banco de dados)
+            document.getElementById('message').innerText = `Tarefa "${task}" adicionada para ${name} em ${date} às ${time}.`;
+
+            // Limpar o formulário
+            document.getElementById('routine-form').reset();
+        });
+
+    </script>
+</body>
+</html>
